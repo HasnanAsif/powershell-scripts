@@ -1,23 +1,35 @@
-﻿# This script is designed to search for file sizes in a specified directory, where users can enter the directory name and file size threshold.
+﻿# This script searches for files smaller than a given size in a specified directory.
 
 #Begin
 function Get-SmallFiles {
   Param (
-  [parameter(position=0, mandatory=$true)]
-  [string]$dir,
-  [parameter(position=1, mandatory=$false)]
-  [int]$Size=100)
+    # Directory to search in (mandatory)
+    [parameter(position=0, mandatory=$true)]
+    [string]$dir,
+
+    # File size threshold in bytes (default is 100 bytes)
+    [parameter(position=1, mandatory=$false)]
+    [int]$Size=100
+  )
+
+  # Get files smaller than the specified size and not folders
   Get-ChildItem $dir | Where-Object {
     $_.Length -lt $Size -and !$_.PSIsContainer
   }
 }
+
 $more="yes"
-do
-{
-$folder=read-host "Key in the directory name"
-$lenght=read-host "Key in the file size in Byte, then all smaller file(s) will be listed"
-Get-SmallFiles -dir $folder -size $lenght  
-$more=read-host "Press Y(es) to check more, or N(n) to stop the checking" 
-}
-until ($more -eq "n")
+
+do {
+  # Prompt user for directory and size
+  $folder=read-host "Enter the directory name"
+  $lenght=read-host "Enter file size in bytes to list smaller files"
+
+  # List files smaller than the given size
+  Get-SmallFiles -dir $folder -size $lenght  
+
+  # Ask if the user wants to check another directory
+  $more=read-host "Press Y for more, N to stop" 
+} until ($more -eq "n")
+
 #End

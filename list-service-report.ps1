@@ -1,6 +1,7 @@
 ﻿# The script prompts an administrator for a target computer name and credentials, retrieves a list of stopped services on the specified remote computer, displays them in a table, and saves the results to a text file.
 
 #Begin
+
 # Prompt the administrator to enter the name of the target computer
 $computerName = Read-Host "Enter the name of the computer to manage"
 
@@ -21,12 +22,16 @@ try {
         $outputPath = "C:\pswork\servicestopped.txt"
         $stoppedServices | Out-File -FilePath $outputPath -Encoding UTF8
 
+        # Notify that the data was saved successfully
         Write-Host "Stopped services information saved to: $outputPath"
+
+        # Inform the user if no stopped services were found
     } else {
         Write-Host "No stopped services found on $computerName."
     }
 } catch {
-    Write-Host "An error occurred while fetching services. Please check the computer name or credentials."
-    Write-Host "Error: $($_.Exception.Message)"
+    Write-Host "An error occurred while fetching services. Please check the computer name or credentials." # Handle errors if the command fails
+    Write-Host "Error: $($_.Exception.Message)" # Display the specific error message
 }
+
 #End

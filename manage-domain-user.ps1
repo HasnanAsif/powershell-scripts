@@ -6,43 +6,62 @@
 #Begin
 function add-newuser
 {
-$gname=read-host “Please key in domain new user’s Given Name:” 
-$sname=read-host “Please key in domain new user’s Sur Name:”
-$pass=read-host “Please key in domain new user’s password:”
-New-ADUser -name “$gname $sname” -SamAccountName “$gname $sname”  -AccountPassword (ConvertTo-SecureString “$pass” -AsPlainText -Force) -DisplayName “$gname $sname” -Enabled $True -GivenName $gname -Surname $sname
-write-host “New user account is now created properly!” -ForegroundColor  Green
+    # Prompt for the new user's given name
+    $gname=read-host “Please key in domain new user’s Given Name:” 
+    
+    # Prompt for the new user's surname
+    $sname=read-host “Please key in domain new user’s Sur Name:”
+    
+    # Prompt for the new user's password
+    $pass=read-host “Please key in domain new user’s password:”
+    
+    # Create a new Active Directory user with the provided information
+    New-ADUser -name “$gname $sname” -SamAccountName “$gname $sname”  -AccountPassword (ConvertTo-SecureString “$pass” -AsPlainText -Force) -DisplayName “$gname $sname” -Enabled $True -GivenName $gname -Surname $sname
+    
+    # Notify the administrator that the new user account is created
+    write-host “New user account is now created properly!” -ForegroundColor Green
 } 
 
 function list-adusers
 {
-write-host “List of doamin users’ information” -ForegroundColor Green 
-get-ADUser  -filter *  |ft
+    # Display a list of all domain users' information
+    write-host “List of domain users’ information” -ForegroundColor Green 
+    get-ADUser  -filter *  |ft
 } 
 
 function d-user
 {
-$name1=read-host “Key in the user name which you want to remove from your domain”
-remove-aduser $name1
+    # Prompt for the username of the user to be removed
+    $name1=read-host “Key in the user name which you want to remove from your domain”
+    
+    # Remove the specified Active Directory user
+    remove-aduser $name1
 } 
 
+# Initialize the option variable and enter the loop
 $option=”Null”
 do
 {
-write-host “Please type L to list your domain users, 
-type A to add a new domain user account,
-type R to remove exiting domain user account 
-and type any other key to exit:” -ForegroundColor Green
+    # Display menu options for the administrator
+    write-host “Please type L to list your domain users, 
+                 type A to add a new domain user account,
+                 type R to remove existing domain user account 
+                 and type any other key to exit:” -ForegroundColor Green
 
-$option=read-host 
-$x=1
- switch ($option)
- {
-     ‘L’ {list-adusers}
-     ‘A’ {add-newuser} 
-     ‘R’ {d-user}
-     Default {$x=2}
- }  
+    # Read the administrator's menu choice
+    $option=read-host 
+    $x=1
+
+    # Handle the menu choice with a switch statement
+    switch ($option)
+    {
+        ‘L’ {list-adusers}  # List all domain users
+        ‘A’ {add-newuser}   # Add a new user to the domain
+        ‘R’ {d-user}        # Remove an existing user from the domain
+        Default {$x=2}       # Exit the loop for any other key input
+    }  
 }
-until ($x -eq 2) 
+until ($x -eq 2)  # Exit the loop when $x is 2
 #End
+
 

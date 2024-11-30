@@ -1,17 +1,33 @@
-﻿# This script provides a list of all files and folder on a drive, showing the item name, creation time, and whether its a file or folder.
+﻿# This script provides a list of all files and folders on the C: drive. 
+# It displays the item number, name, creation time, and indicates whether it is a file or a folder.
 
 #Begin
-[int] $i=1
-cd c:\
-Foreach ($file in Get-Childitem C:\)
- {
-write-host File/Folder#: $i  -ForegroundColor  DarkGreen
-write-host File/Folder Name: $file.name 
-write-host Creation time: $file.CreationTime
-if ((Get-Item -Path $file).PSIsContainer) {$file.name +" is a folder."}
-else {$file.name +" is a file."}
-" "
-$i++
+
+# Initialize a counter variable to track the number of files and folders
+[int] $i = 1
+
+# Change the current directory to the root of the C: drive
+cd C:\
+
+# Iterate through all files and folders on the C: drive using Get-ChildItem
+Foreach ($file in Get-ChildItem C:\) {
+    Write-Host "File/Folder#: $i" -ForegroundColor DarkGreen # Display the item number with green text
+
+    Write-Host "File/Folder Name: $file.Name" # Display the name of the file or folder
+
+    Write-Host "Creation time: $file.CreationTime" # Display the creation time of the file or folder
+
+    if ((Get-Item -Path $file).PSIsContainer) { # Check if the current item is a folder using the PSIsContainer property
+        Write-Host "$($file.Name) is a folder." # Display a message indicating the item is a folder
+    } else {
+        Write-Host "$($file.Name) is a file." # Display a message indicating the item is a file
+    }
+
+    Write-Host " " # Add a blank line for better readability between items
+
+    $i++ # Increment the counter
 }
-write-host Total item number: $($i-1)
+
+Write-Host "Total item number: $($i - 1)" # Display the total number of items processed
+
 #End
