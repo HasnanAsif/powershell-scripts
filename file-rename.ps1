@@ -1,6 +1,5 @@
 ﻿# This script renames .ps1 files in a specified folder by appending a number to their names. It also offers the option to reverse the changes, restoring the files to their original names.
 
-#Begin
 
 [int] $i = 1 # Initialize a counter variable to number the files during renaming
 
