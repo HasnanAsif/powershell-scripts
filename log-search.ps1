@@ -1,6 +1,6 @@
 ﻿# The function Get-LogFile is designed to search for a given keyword within .log files in the C:\Windows\logs directory and its subdirectories.
 
-#Begin
+
 function Get-LogFile { # Function to search for a keyword in log files.
     [CmdletBinding()]
     Param (
@@ -9,15 +9,12 @@ function Get-LogFile { # Function to search for a keyword in log files.
     )
 
     Process {
-        # Define the base directory to search
-        $Directory = "C:\Windows\logs"
+        $Directory = "C:\Windows\logs" # Define the base directory to search
 
-        # Search for log files (*.log) recursively
-        $Files = Get-ChildItem -Path $Directory -Recurse -Include *.log -ErrorAction SilentlyContinue
+        $Files = Get-ChildItem -Path $Directory -Recurse -Include *.log -ErrorAction SilentlyContinue # Search for log files (*.log) recursively
 
         if ($Files) {
-            # Search for the keyword in the discovered log files
-            $Results = $Files | Select-String -Pattern $Keyword -ErrorAction SilentlyContinue | Group-Object Filename
+            $Results = $Files | Select-String -Pattern $Keyword -ErrorAction SilentlyContinue | Group-Object Filename # Search for the keyword in the discovered log files
 
             if ($Results) {
                 Write-Host "`nFiles containing '$Keyword':" -ForegroundColor Green # Notify user that files with the keyword are found
@@ -32,4 +29,4 @@ function Get-LogFile { # Function to search for a keyword in log files.
         }
     }
 }
-#End
+

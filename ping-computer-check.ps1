@@ -1,25 +1,17 @@
 ﻿# This script tests the connectivity to a specified computer using Test-Connection and provides feedback on whether the connection is successful.
 
-#Begin
-# Prompt the user to enter the target computer name
-Write-host "Please enter ComputerName:"
 
-# Capture the user input for the computer name
-$ComputerName = read-host
+Write-host "Please enter ComputerName:" # Prompt the user to enter the target computer name
+$ComputerName = read-host # Capture the user input for the computer name
 
-# Display the entered computer name for confirmation
-write-host "Reminder: the ComputerName is  $Computername." -ForegroundColor DarkYellow
-
-# Use Test-Connection to test the connectivity to the specified computer
-$status = Test-Connection  -ComputerName $Computername -count 1
+write-host "Reminder: the ComputerName is  $Computername." -ForegroundColor DarkYellow # Display the entered computer name for confirmation
+$status = Test-Connection  -ComputerName $Computername -count 1 # Use Test-Connection to test the connectivity to the specified computer
 
 # Check if the connection was successful (status code 0 indicates success)
 if ($status.statuscode -eq 0) {
-    # Display success message if the connection is successful
-    Write-Output “Connection test result is $True.”
+    Write-Output “Connection test result is $True.” # Display success message if the connection is successful
 } 
 else {
-    # Display failure message if the connection fails
-    Write-Output “Connection test result is $False.”
+    Write-Output “Connection test result is $False.” # Display failure message if the connection fails
 }
-#End
+
