@@ -45,10 +45,10 @@ do
         ‘L’ {list-adusers}  # List all domain users
         ‘A’ {add-newuser}   # Add a new user to the domain
         ‘R’ {d-user}        # Remove an existing user from the domain
-        Default {$x=2}       # Exit the loop for any other key input
+        Default {$x=2}      # Exit the loop for any other key input
     }  
 }
 until ($x -eq 2)  # Exit the loop when $x is 2
-#End
+
 
 
