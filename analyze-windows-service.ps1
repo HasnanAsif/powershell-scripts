@@ -8,9 +8,7 @@ Function Get-Testresult {
         [Parameter(ValueFromPipeline)] 
         $item  
     )
-    
     $Service = Get-Service -name $item -ErrorAction SilentlyContinue # Attempt to retrieve the service details using Get-Service
-    
     If (-Not $Service) { 
         $item + " is not installed on this computer." 
     } 
