@@ -18,7 +18,7 @@ Before running these scripts, ensure you have the following:
 ### 🔦 Overview of Scripts
 
 
-1. **Analyze Windows Service**
+1. **Analyze Windows Service**\
 &nbsp;&nbsp;&nbsp;&nbsp; Checks if a specified Windows service is installed on the computer and displays its status (running, stopped, etc..)
 
 
@@ -29,7 +29,7 @@ Before running these scripts, ensure you have the following:
 &nbsp;&nbsp;&nbsp;&nbsp; Provides a list of all files and folders on a drive, showing the item name, creation time, and whether it's a file or folder.
 
 4. **File Rename**\
-&nbsp;&nbsp;&nbsp;&nbsp;Renames files in a specified folder by appending a number to their names. It also offers the option to reverse the changes, restoring the files to their original names.
+&nbsp;&nbsp;&nbsp;&nbsp; Renames files in a specified folder by appending a number to their names. It also offers the option to reverse the changes, restoring the files to their original names.
 
 4. **File Size Filter**\
 &nbsp;&nbsp;&nbsp;&nbsp; Designed to search for file sizes in a specified directory, where users can enter the directory name and file size threshold.
@@ -41,7 +41,7 @@ Before running these scripts, ensure you have the following:
 &nbsp;&nbsp;&nbsp;&nbsp; Search through log files on a Windows system for specific keywords.
   
 9. **Manage Domain User**\
-&nbsp;&nbsp;&nbsp;&nbsp; provides an interactive menu to manage Active Directory users. It allows administrators to list all domain users, add a new user to the domain, and remove an existing user from the domain.
+&nbsp;&nbsp;&nbsp;&nbsp; Provides an interactive menu to manage Active Directory users. It allows administrators to list all domain users, add a new user to the domain, and remove an existing user from the domain.
   
 10. **Ping Computer Check**\
 &nbsp;&nbsp;&nbsp;&nbsp; Tests the connectivity to a specified computer using Test-Connection and provides feedback on whether the connection is successful.
@@ -53,16 +53,16 @@ Before running these scripts, ensure you have the following:
 
 ### ⛏️ Usage
 Clone this repository:\
-&nbsp;&nbsp;&nbsp;&nbsp; `Git Clone https://github.com/HasnanAsif/powershell-scripts.git`
+`Git Clone https://github.com/HasnanAsif/powershell-scripts.git`
 
 Cd into the repository you have cloned\
-&nbsp;&nbsp;&nbsp;&nbsp; `cd (your-path)\powershell-scripts`
+`cd (your-path)\powershell-scripts`
 
 Check & edit the script if needed prior to running it and make sure the paths and parameters align with your needs.
 
 
 Run any script in PowerShell\
-&nbsp;&nbsp;&nbsp;&nbsp; `.\script-name.ps1` 
+`.\script-name.ps1` 
 
 Follow the prompts for execution
 
