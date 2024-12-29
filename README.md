@@ -16,8 +16,11 @@ Before running these scripts, ensure you have the following:
 ---
 
 ### 🔦 Overview of Scripts
-1. **Analyze Windows Service**\
- - Checks if a specified Windows service is installed on the computer and displays its status (running, stopped, etc..)
+
+<details>
+ <summary>**Analyze Windows Service**</summary> 
+  - Checks if a specified Windows service is installed on the computer and displays its status (running, stopped, etc..)
+</details>
 
 2. **Disk Space Check**\
 Retrieves the total and free space of a drive, analyzes the free space, and provides feedback based on the available disk space, such as whether it's too low, normal, or shareable.
