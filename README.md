@@ -17,52 +17,52 @@ Before running these scripts, ensure you have the following:
 
 ### 🔦 Overview of Scripts
 
-<details>
- <summary>**Analyze Windows Service**</summary> 
-  - Checks if a specified Windows service is installed on the computer and displays its status (running, stopped, etc..)
-</details>
+
+1. **Analyze Windows Service**
+&nbsp;&nbsp;&nbsp;&nbsp; Checks if a specified Windows service is installed on the computer and displays its status (running, stopped, etc..)
+
 
 2. **Disk Space Check**\
-Retrieves the total and free space of a drive, analyzes the free space, and provides feedback based on the available disk space, such as whether it's too low, normal, or shareable.
+&nbsp;&nbsp;&nbsp;&nbsp; Retrieves the total and free space of a drive, analyzes the free space, and provides feedback based on the available disk space, such as whether it's too low, normal, or shareable.
 
 3. **Drive Inventory**\
-Provides a list of all files and folders on a drive, showing the item name, creation time, and whether it's a file or folder.
+&nbsp;&nbsp;&nbsp;&nbsp; Provides a list of all files and folders on a drive, showing the item name, creation time, and whether it's a file or folder.
 
 4. **File Rename**\
-Renames files in a specified folder by appending a number to their names. It also offers the option to reverse the changes, restoring the files to their original names.
+&nbsp;&nbsp;&nbsp;&nbsp;Renames files in a specified folder by appending a number to their names. It also offers the option to reverse the changes, restoring the files to their original names.
 
 4. **File Size Filter**\
-Designed to search for file sizes in a specified directory, where users can enter the directory name and file size threshold.
+&nbsp;&nbsp;&nbsp;&nbsp; Designed to search for file sizes in a specified directory, where users can enter the directory name and file size threshold.
 
 6. **List Service Report**\
-Prompts an administrator for a target computer name and credentials, retrieves a list of stopped services on the specified remote computer, displays them in a table, and saves the results to a text file.
+&nbsp;&nbsp;&nbsp;&nbsp; Prompts an administrator for a target computer name and credentials, retrieves a list of stopped services on the specified remote computer, displays them in a table, and saves the results to a text file.
 
 8. **Log Search**\
-Search through log files on a Windows system for specific keywords.
+&nbsp;&nbsp;&nbsp;&nbsp; Search through log files on a Windows system for specific keywords.
   
 9. **Manage Domain User**\
-provides an interactive menu to manage Active Directory users. It allows administrators to list all domain users, add a new user to the domain, and remove an existing user from the domain.
+&nbsp;&nbsp;&nbsp;&nbsp; provides an interactive menu to manage Active Directory users. It allows administrators to list all domain users, add a new user to the domain, and remove an existing user from the domain.
   
 10. **Ping Computer Check**\
-Tests the connectivity to a specified computer using Test-Connection and provides feedback on whether the connection is successful.
+&nbsp;&nbsp;&nbsp;&nbsp; Tests the connectivity to a specified computer using Test-Connection and provides feedback on whether the connection is successful.
   
 11. **Remote File Search**\
-Search for files of a specific type on a remote computer, provided the user can input the target computer name and file type.
+&nbsp;&nbsp;&nbsp;&nbsp; Search for files of a specific type on a remote computer, provided the user can input the target computer name and file type.
 
 ---
 
 ### ⛏️ Usage
 Clone this repository:\
-    `Git Clone https://github.com/HasnanAsif/powershell-scripts.git`
+&nbsp;&nbsp;&nbsp;&nbsp; `Git Clone https://github.com/HasnanAsif/powershell-scripts.git`
 
 Cd into the repository you have cloned\
-    `cd (your-path)\powershell-scripts`
+&nbsp;&nbsp;&nbsp;&nbsp; `cd (your-path)\powershell-scripts`
 
 Check & edit the script if needed prior to running it and make sure the paths and parameters align with your needs.
 
 
 Run any script in PowerShell\
-	`.\script-name.ps1` 
+&nbsp;&nbsp;&nbsp;&nbsp; `.\script-name.ps1` 
 
 Follow the prompts for execution
 
